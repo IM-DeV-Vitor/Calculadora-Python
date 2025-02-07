@@ -10,7 +10,7 @@ class Calculadora(ctk.CTk): #Classe principal
         self.resizable(False, False)
 
 
-        for i in range(4):
+        for i in range(4): #Este looping centraliza as linhas e colunas
             self.grid_columnconfigure(i, weight=1)
         for i in range(5):
             self.grid_rowconfigure(i, weight=1)
@@ -18,14 +18,13 @@ class Calculadora(ctk.CTk): #Classe principal
         self.display = ctk.CTkLabel(self, text=self.valor, font=("Arial", 24), width=380, height=50, fg_color="gray20")
         self.display.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
 
-        botoes = [
+        botoes = [ #Lista dos botões clicáveis
             ("7", self.N7), ("8", self.N8), ("9", self.N9), ("/", self.Divisao),
             ("4", self.N4), ("5", self.N5), ("6", self.N6), ("*", self.Multiplica),
             ("1", self.N1), ("2", self.N2), ("3", self.N3), ("-", self.Subtracao),
             ("0", self.N0), ("=", self.Igual), ("+", self.Soma)
         ]
 
-        # Posicionando botões na grade
         row, col = 1, 0
         for text, command in botoes:
             botao = ctk.CTkButton(self, text=text, width=80, height=60, command=command)
