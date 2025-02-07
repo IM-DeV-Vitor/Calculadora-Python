@@ -67,7 +67,7 @@ class Calculadora(ctk.CTk): #Classe principal
     def Soma(self): self.atualizar_display("+") #Função que torna possível a escolha da operação Soma
 
     def Igual(self): #Função que verifica se há erros
-        try:
+        try: #Verifica se a operação é possível
             resultado = eval(self.valor)
             self.display.configure(text=str(resultado))
             self.valor = str(resultado)
