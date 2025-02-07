@@ -1,7 +1,7 @@
 import customtkinter as ctk
 
-class Calculadora(ctk.CTk):
-    def __init__(self):
+class Calculadora(ctk.CTk): #Classe principal
+    def __init__(self): #Função de inicialização
         super().__init__()
 
         self.valor = ""
@@ -36,37 +36,37 @@ class Calculadora(ctk.CTk):
                 col = 0
                 row += 1
 
-    def N7(self):
+    def N7(self): #Função que representa o Número 7
         self.atualizar_display("7")
-    def N8(self):
+    def N8(self): #Função que representa o Número 8
         self.atualizar_display("8")
-    def N9(self):
+    def N9(self): #Função que representa o Número 9
         self.atualizar_display("9")
-    def N4(self):
+    def N4(self): #Função que representa o Número 4
         self.atualizar_display("4")
-    def N5(self):
+    def N5(self): #Função que representa o Número 5
         self.atualizar_display("5")
-    def N6(self):
+    def N6(self): #Função que representa o Número 6
         self.atualizar_display("6")
-    def N1(self):
+    def N1(self): #Função que representa o Número 1
         self.atualizar_display("1")
-    def N2(self):
+    def N2(self): #Função que representa o Número 2
         self.atualizar_display("2")
-    def N3(self):
+    def N3(self): #Função que representa o Número 3
         self.atualizar_display("3")
-    def N0(self):
+    def N0(self): #Função que representa o Número 0
         self.atualizar_display("0")
 
-    def atualizar_display(self, num):
+    def atualizar_display(self, num): #Função responsável pelos aparecimentos dos numeros no display
         self.valor += num
         self.display.configure(text=self.valor)
 
-    def Divisao(self): self.atualizar_display("/")
-    def Multiplica(self): self.atualizar_display("*")
-    def Subtracao(self): self.atualizar_display("-")
-    def Soma(self): self.atualizar_display("+")
+    def Divisao(self): self.atualizar_display("/")  #Função que torna possível a escolha da operação Divisão
+    def Multiplica(self): self.atualizar_display("*") #Função que torna possível a escolha da operação Multiplicação
+    def Subtracao(self): self.atualizar_display("-") #Função que torna possível a escolha da operação Subtração
+    def Soma(self): self.atualizar_display("+") #Função que torna possível a escolha da operação Soma
 
-    def Igual(self):
+    def Igual(self): #Função que verifica se há erros
         try:
             resultado = eval(self.valor)
             self.display.configure(text=str(resultado))
